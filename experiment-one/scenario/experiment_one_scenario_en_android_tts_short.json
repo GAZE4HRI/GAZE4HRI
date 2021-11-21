@@ -1,0 +1,51 @@
+{
+  "greeting" : {
+    "action" : {
+      "type" : "sayOnAndroidAndPlayAnimationAction",
+      "text": "Hello. this is Zenek. I will be interviewing you on a job you applied for. Before we start let's make a demo, throughout the interview you will be given 10 seconds to answer each question, after the time limit I will continue with the next question.",
+      "gestures":[["animations/Stand/Gestures/Hey_1", 0],
+        ["animations/Stand/Gestures/Me_1",1],
+        ["animations/Stand/Gestures/You_1",2],
+        ["animations/Stand/Gestures/Explain_1",1]
+      ]
+    },
+    "waitTime" : 26
+  },
+
+  "stages" : [
+    {
+      "startAction": {
+        "type" : "sayOnAndroidAndPlayAnimationAction",
+        "text": "Can you introduce yourself?",
+        "gestures":[
+             ["animations/Stand/Gestures/You_1",0],
+             ["animations/Stand/Gestures/Explain_2",1]
+             ]
+      },
+      "waitTime": 33
+    },
+    {
+      "startAction": {
+        "type" : "sayOnAndroidAndPlayAnimationAction",
+        "text": "How did you find out about this job offer?",
+        "gestures":[
+             ["animations/Stand/Gestures/You_1",0],
+             ["animations/Stand/Gestures/Explain_3",1]
+             ]
+      },
+      "waitTime": 33
+    }
+  ],
+
+
+
+  "goodbye" : {
+    "action" : {
+      "type" : "sayOnAndroidAndPlayAnimationAction",
+      "text" : "The interview is over, thank you for your participation we will inform you about your progress.",
+      "gestures":[["animations/Stand/Gestures/Hey_1", 2]]
+    },
+    "waitTime" : 3
+  }
+
+}

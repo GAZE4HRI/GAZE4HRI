@@ -1,0 +1,64 @@
+{
+  "greeting" : {
+    "action" : {
+      "type" : "sayOnAndroidAndPlayAnimationAction",
+      "text": "Proszę opowiedz mi coś o sobie",
+      "gestures":[["animations/Stand/Gestures/Hey_1", 0],
+        ["animations/Stand/Gestures/Me_1",1],
+        ["animations/Stand/Gestures/You_1",2],
+        ["animations/Stand/Gestures/Explain_1",1]
+      ]
+    },
+    "waitTime" : 10
+  },
+
+  "stages" : [
+     [{
+          "startAction": {
+            "type" : "sayOnAndroidAndPlayAnimationAction",
+            "text": "Mam pytanie. Czy lubisz roboty?",
+            "gestures":[
+                 ["animations/Stand/Gestures/You_1",0],
+                 ["animations/Stand/Gestures/Enthusiastic_5",1]
+                 ]
+          },
+          "waitTime": 40
+        },
+        {
+          "startAction": {
+            "type" : "sayOnAndroidAndPlayAnimationAction",
+            "text": "Mam do ciebie prośbę. Czy mógłbyś się uśmiechnąć?",
+            "gestures":[
+                 ["animations/Stand/Gestures/You_1",0],
+                 ["animations/Stand/Gestures/Enthusiastic_4",1]
+                 ]
+          },
+          "waitTime": 40
+        },
+       {
+          "startAction": {
+            "type" : "sayOnAndroidAndPlayAnimationAction",
+            "text": "Mam do ciebie jeszcze jedną prośbę. Czy mógłbyś spojżeć w dół i zrobić smutną minę?",
+            "gestures":[
+                 ["animations/Stand/Gestures/You_1",1],
+                 ["animations/Stand/Emotions/Negative/Bored_1",0]
+                 ]
+          },
+          "waitTime": 40
+        }
+
+     ]
+  ],
+
+
+
+  "goodbye" : {
+    "action" : {
+      "type" : "sayOnAndroidAndPlayAnimationAction",
+      "text" : "Dziękuję za pomoc, miło się z tobą rozmawiało.",
+      "gestures":[["animations/Stand/Gestures/Hey_1", 2]]
+    },
+    "waitTime" : 3
+  }
+
+}

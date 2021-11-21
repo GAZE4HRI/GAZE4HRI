@@ -1,0 +1,163 @@
+{
+  "greeting" : {
+    "action" : {
+      "type" : "playSoundAndAnimation",
+      "path" : "/home/nao/experiment-one/audio/greating.wav",
+      "async": "True",
+      "volume": 0.5,
+      "gestures":[["animations/Stand/Gestures/Hey_1", 0],
+        ["animations/Stand/Gestures/Me_1",1],
+        ["animations/Stand/Gestures/You_1",2],
+        ["animations/Stand/Gestures/Explain_1",1]
+      ]
+    },
+    "waitTime" : 3
+  },
+
+  "stages" : [
+    {
+      "startAction": {
+        "type" : "playSoundAndAnimation",
+        "path" : "/home/nao/experiment-one/audio/sentence0.wav",
+        "async": "True",
+        "volume": 0.5,
+        "gestures":[
+             ["animations/Stand/Gestures/You_1",0],
+             ["animations/Stand/Gestures/Explain_2",1]
+             ]
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type" : "playSoundAndAnimation",
+        "path" : "/home/nao/experiment-one/audio/sentence1.wav",
+        "async": "True",
+        "volume": 0.4,
+        "gestures":[
+             ["animations/Stand/Gestures/You_1",0],
+             ["animations/Stand/Gestures/Explain_3",1]
+             ]
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type" : "playSoundAndAnimation",
+        "path" : "/home/nao/experiment-one/audio/sentence2.wav",
+        "async": "True",
+        "volume": 0.5,
+        "gestures":[
+             ["animations/Stand/Gestures/You_1",0],
+             ["animations/Stand/Gestures/Explain_5",1]
+             ]
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type" : "playSoundAndAnimation",
+        "path" : "/home/nao/experiment-one/audio/sentence3.wav",
+        "async": "True",
+        "volume": 0.4,
+        "gestures":[
+             ["animations/Stand/Gestures/Thinking_1",0],
+             ["animations/Stand/Gestures/Explain_8",1]
+             ]
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type" : "playSoundAndAnimation",
+        "path" : "/home/nao/experiment-one/audio/sentence4.wav",
+        "async": "True",
+        "volume": 0.4,
+        "gestures":[
+             ["animations/Stand/Gestures/Thinking_3",0],
+             ["animations/Stand/Gestures/Explain_5",1]
+             ]
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type" : "playSoundAndAnimation",
+        "path" : "/home/nao/experiment-one/audio/sentence5.wav",
+        "async": "True",
+        "volume": 0.5,
+        "gestures":[
+             ["animations/Stand/Gestures/Explain_10",1]
+             ]
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type" : "playSoundAndAnimation",
+        "path" : "/home/nao/experiment-one/audio/sentence6.wav",
+        "async": "True",
+        "volume": 0.4,
+        "gestures":[
+             ["animations/Stand/Gestures/Thinking_3",0],
+             ["animations/Stand/Gestures/Explain_6",1]
+             ]
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type" : "playSoundAndAnimation",
+        "path" : "/home/nao/experiment-one/audio/sentence7.wav",
+        "async": "True",
+        "volume": 0.4,
+        "gestures":[
+             ["animations/Stand/Gestures/You_1",0],
+             ["animations/Stand/Gestures/Thinking_1",0],
+             ["animations/Stand/Gestures/Explain_3",1]
+             ]
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type" : "playSoundAndAnimation",
+        "path" : "/home/nao/experiment-one/audio/sentence8.wav",
+        "async": "True",
+        "volume": 0.4,
+        "gestures":[
+             ["animations/Stand/Gestures/You_1",0],
+             ["animations/Stand/Gestures/Explain_7",1]
+             ]
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type" : "playSoundAndAnimation",
+        "path" : "/home/nao/experiment-one/audio/sentence9.wav",
+        "async": "True",
+        "volume": 0.4,
+        "gestures":[
+             ["animations/Stand/Gestures/You_1",0],
+             ["animations/Stand/Gestures/Explain_2",1]
+             ]
+      },
+      "waitTime": 10
+    }
+  ],
+
+
+
+  "goodbye" : {
+    "action" : {
+      "type" : "playSoundAndAnimation",
+      "path" : "/home/nao/experiment-one/audio/goodbye.wav",
+      "async": "True",
+      "volume": 0.5,
+      "gestures":[["animations/Stand/Gestures/Hey_1", 2]]
+    },
+    "waitTime" : 3
+  }
+
+}

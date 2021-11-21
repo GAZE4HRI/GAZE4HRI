@@ -1,0 +1,65 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.3.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+        jcenter()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath('se.transmode.gradle:gradle-docker:1.2')
+	}
+
+
+
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'application'
+apply plugin: 'docker'
+
+version = '1.0'
+sourceCompatibility = 1.8
+
+
+group = 'iosr'
+mainClassName = 'pl.edu.agh.iosr.RegistryApplication'
+
+
+distDocker {
+    exposePort 8761
+//    setEnvironment 'JAVA_OPTS', '-Dspring.profiles.active=docker'
+}
+
+docker {
+    maintainer = 'Mateusz Jarosz '
+    baseImage = 'java:8'
+}
+
+
+
+repositories {
+	mavenCentral()
+}
+
+
+ext {
+	springCloudVersion = 'Dalston.RELEASE'
+}
+
+dependencies {
+	compile('org.springframework.cloud:spring-cloud-starter-eureka-server:1.2.7.RELEASE')
+	compile('net.logstash.logback:logstash-logback-encoder:4.9')
+	compile('ch.qos.logback:logback-classic:1.2.3')
+	compile('ch.qos.logback:logback-core:1.2.3')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}

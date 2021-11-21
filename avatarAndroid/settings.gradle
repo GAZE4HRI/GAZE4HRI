@@ -1,0 +1,3 @@
+rootProject.name='testUnity'
+include ':app', ':Avatar-debug'
+include ':openCVLibrary341'

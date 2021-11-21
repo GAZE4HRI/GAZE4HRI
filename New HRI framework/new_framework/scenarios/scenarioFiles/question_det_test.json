@@ -1,0 +1,570 @@
+{
+  "root" : {
+    "type" : "sync",
+    "start_rule" : "always()",
+    "end_rule" : "child_ready()",
+    "events" : [],
+    "actions" : [
+      {
+            "Action": {
+                  "type": "setOptionAction",
+                  "var": "contact_mode",
+                  "val": true
+                }
+          }
+    ],
+    "children" : [
+      {
+        "type" : "sync",
+        "start_rule" : "options('test', False)",
+        "end_rule" : "always()",
+        "events" : [],
+        "actions" : [
+          {
+            "Action": {
+              "type": "prepareAction",
+              "objToPrepare": [
+                "robot_client",
+                "mouse_listener",
+                "key_listener",
+                "all_recorder",
+                "VIDEO_ANALYSER"
+              ]
+            }
+          },
+          {
+            "Action": {
+              "type": "startFaceTrackingAction"
+            }
+          },
+          {
+            "Action": {
+                  "type": "lookInDirAction",
+                  "dir": "looking_on_middle"
+                }
+          },
+          {
+            "Action": {
+                  "type": "saveFacePositionAction"
+                }
+          }
+        ],
+        "children" : [
+          {
+            "type" : "sync",
+            "start_rule" : "always()",
+            "end_rule" : "child_ready()",
+            "events" : [
+              {
+                "Event": {
+                  "type" : "emotion_occurred",
+                  "separation": 15,
+                  "value" : "sad",
+                  "actions" : [
+                    {
+                      "Action": {
+                        "type" : "sayOnAndroidAndPlayAnimationAction",
+                        "text": "CZy to co powiedziałem zasmuciło cię w jakiś sposub? może jesteś chory?",
+                        "gestures":[]
+                      }
+                    },
+                    {
+                      "Action": {
+                        "type": "waitOrClick",
+                        "waitTime": 5
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Event": {
+                  "type" : "silence_detected",
+                  "separation": 15,
+                  "value" : 3,
+                  "actions" : [
+                    {
+                      "Action": {
+                        "type": "setAction",
+                        "var": "click",
+                        "val": true
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Event": {
+                  "type" : "gaze_averting",
+                  "separation": 15,
+                  "value" : "",
+                  "actions" : [
+                    {
+                      "Action": {
+                        "type" : "sayOnAndroidAndPlayAnimationAction",
+                        "text": "Czy nudzi cię już rozmowa? może dzieje się coś ciekawego za mną?",
+                        "gestures":[]
+                      }
+                    },
+                    {
+                      "Action": {
+                        "type": "waitOrClick",
+                        "waitTime": 5
+                      }
+                    }
+                  ]
+                }
+              },
+               {
+                "Event": {
+                  "type" : "question_detected",
+                  "separation": 15,
+                  "value" : "",
+                  "actions" : [
+                    {
+                      "Action": {
+                        "type" : "sayOnAndroidAndPlayAnimationAction",
+                        "text": "niestety nie mogę odopwadać na pytania ale pracują nad tym już nasi najlepsi specjaliści by w przyszłości było to możliwe",
+                        "gestures":[]
+                      }
+                    },
+                    {
+                      "Action": {
+                        "type": "waitOrClick",
+                        "waitTime": 5
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "actions" : [
+              {
+                  "Action": {
+                    "type": "sayOnAndroidAndPlayAnimationAction",
+                    "text": "Dzień dobry. Mam na imię Pepper.",
+                    "gestures": [
+                      [
+                        "animations/Stand/Gestures/Hey_1", 0
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "Action": {
+                    "type": "resetClick"
+                  }
+                },
+                {
+                  "Action": {
+                    "type": "waitOrClick",
+                    "waitTime": 5
+                  }
+                },
+                {
+                  "Action": {
+                    "type" : "sayOnAndroidAndPlayAnimationAction",
+                    "text": "Skąd dowiedziałeś się o tej ofercie pracy?",
+                    "gestures":[
+                         ["animations/Stand/Gestures/You_1",0],
+                         ["animations/Stand/Gestures/Explain_1",1]
+                         ]
+                  }
+                },
+                {
+                  "Action": {
+                    "type": "resetClick"
+                  }
+                },
+                {
+                  "Action": {
+                    "type": "waitOrClick",
+                    "waitTime": 30
+                  }
+                },
+                {
+                  "Action": {
+                    "type" : "sayOnAndroidAndPlayAnimationAction",
+                    "text": "saasssssssssssssssssssssss?",
+                    "gestures":[
+                         ["animations/Stand/Gestures/You_1",0],
+                         ["animations/Stand/Gestures/Explain_1",1]
+                         ]
+                  }
+                },
+                {
+                  "Action": {
+                    "type": "resetClick"
+                  }
+                },
+                {
+                  "Action": {
+                    "type": "waitOrClick",
+                    "waitTime": 30
+                  }
+                }
+
+            ],
+            "children" : [
+            {
+              "type" : "sync",
+              "start_rule" : "always()",
+              "end_rule" : "always()",
+              "events" : [],
+              "actions" : [
+                                {
+                  "Action" : {
+                  "type" : "sayOnAndroidAndPlayAnimationAction",
+                  "text" : "Rozmowa dobiegła końca, dziękujemy za udział, poinformujemy Cię o postępach.",
+                  "gestures":[["animations/Stand/Gestures/Hey_1", 2]]
+                  }
+                },
+                {
+                  "Action": {
+                    "type": "resetClick"
+                  }
+                },
+                {
+                  "Action": {
+                    "type": "waitOrClick",
+                    "waitTime": 30
+                  }
+                },
+                {
+                  "Action": {
+                    "type": "stopFaceTrackingAction"
+                  }
+                },
+                {
+                  "Action": {
+                  "type": "cleanAllAction"
+                }
+                }
+              ],
+              "children" : []
+            }
+            ]
+          }
+        ]
+
+
+      },
+      {
+        "type" : "sync",
+        "start_rule" : "options('contact_mode', False)",
+        "end_rule" : "always()",
+        "events" : [],
+        "actions" : [
+          {
+            "Action": {
+              "type": "prepareAction",
+              "objToPrepare": [
+                "robot_client",
+                "mouse_listener",
+                "key_listener",
+                "click_listener",
+                "all_recorder",
+                "VIDEO_ANALYSER",
+                "QUESTON_DETECTOR"
+              ]
+            }
+          },
+          {
+            "Action": {
+              "type": "startFaceTrackingAction"
+            }
+          },
+          {
+            "Action": {
+                  "type": "lookInDirAction",
+                  "dir": "looking_on_middle"
+                }
+          },
+          {
+            "Action": {
+                  "type": "saveFacePositionAction"
+                }
+          }
+        ],
+        "children" : [
+          {
+            "type" : "sync",
+            "start_rule" : "always()",
+            "end_rule" : "child_ready()",
+              "events" : [
+              {
+                "Event": {
+                  "type" : "emotion_occurred",
+                  "separation": 15,
+                  "value" : "sad",
+                  "actions" : [
+                    {
+                      "Action": {
+                        "type" : "sayOnAndroidAndPlayAnimationAction",
+                        "text": "CZy to co powiedziałem zasmuciło cię w jakiś sposub? może jesteś chory?",
+                        "gestures":[]
+                      }
+                    },
+                    {
+                      "Action": {
+                        "type": "waitOrClick",
+                        "waitTime": 5
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Event": {
+                  "type" : "silence_detected",
+                  "separation": 30,
+                  "value" : 4,
+                  "actions" : [
+                    {
+                      "Action": {
+                        "type": "setAction",
+                        "var": "click",
+                        "val": true
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Event": {
+                  "type" : "gaze_averting",
+                  "separation": 40,
+                  "value" : "",
+                  "actions" : [
+                    {
+                      "Action": {
+                        "type" : "sayOnAndroidAndPlayAnimationAction",
+                        "text": "Czy nudzi cię już rozmowa? może dzieje się coś ciekawego za mną?",
+                        "gestures":[]
+                      }
+                    },
+                    {
+                      "Action": {
+                        "type": "waitOrClick",
+                        "waitTime": 5
+                      }
+                    }
+                  ]
+                }
+              },
+               {
+                "Event": {
+                  "type" : "question_detected",
+                  "separation": 60,
+                  "value" : "",
+                  "actions" : [
+                    {
+                      "Action": {
+                        "type" : "sayOnAndroidAndPlayAnimationAction",
+                        "text": "niestety nie mogę odpowiadać na pytania ale pracują nad tym już nasi najlepsi specjaliści by w przyszłości było to możliwe",
+                        "gestures":[]
+                      }
+                    },
+                    {
+                      "Action": {
+                        "type": "waitOrClick",
+                        "waitTime": 5
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "actions" : [
+              {
+                  "Action": {
+                    "type": "sayOnAndroidAndPlayAnimationAction",
+                    "text": "Dzień dobry. Mam na imię Pepper. Przeprowadzę z tobą rozmowę w sprawie pracy o którą się ubiegałeś. Zanim zaczniemy, wyjaśnie ci zasady rozmowy. W trakcie wywiadu będziesz otrzymywał kolejne pytania. Po zadaniu pytania będziesz miał 30 sekund na odpowiedź.",
+                    "gestures": [
+                      [
+                        "animations/Stand/Gestures/Hey_1", 0
+                      ],
+                      [
+                        "animations/Stand/Gestures/Me_1", 1
+                      ],
+                      [
+                        "animations/Stand/Gestures/You_1", 2
+                      ],
+                      [
+                        "animations/Stand/Gestures/Explain_1", 1
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "Action": {
+                    "type": "resetClick"
+                  }
+                },
+                {
+                  "Action": {
+                    "type": "waitOrClick",
+                    "waitTime": 9
+                  }
+                },
+                {
+                  "Action": {
+                    "type" : "sayOnAndroidAndPlayAnimationAction",
+                    "text": "Skąd dowiedziałeś się o tej ofercie pracy?",
+                    "gestures":[
+                         ["animations/Stand/Gestures/You_1",0],
+                         ["animations/Stand/Gestures/Explain_1",1]
+                         ]
+                  }
+                },
+                {
+                  "Action": {
+                    "type": "resetClick"
+                  }
+                },
+                {
+                  "Action": {
+                    "type": "waitOrClick",
+                    "waitTime": 30
+                  }
+                },
+                {
+                  "Action": {
+                    "type" : "sayOnAndroidAndPlayAnimationAction",
+                    "text": "Porozmawiajmy o tobie. Jakie są twoje hobby, twoje oczekiwania i cele?",
+                    "gestures":[
+                         ["animations/Stand/Gestures/You_1",0],
+                         ["animations/Stand/Gestures/Explain_2",1]
+                         ]
+                  }
+                },
+                {
+                  "Action": {
+                    "type": "resetClick"
+                  }
+                },
+                {
+                  "Action": {
+                    "type": "waitOrClick",
+                    "waitTime": 30
+                  }
+                },
+                {
+                  "Action": {
+                    "type" : "sayOnAndroidAndPlayAnimationAction",
+                    "text": "Proszę opowiedz mi o stanowiskach które zajmowałeś. Dlaczego jesteś zainteresowany tą ofertą pracy?",
+                    "gestures":[
+                         ["animations/Stand/Gestures/You_1",0],
+                         ["animations/Stand/Gestures/Explain_3",1]
+                         ]
+                  }
+                },
+                {
+                  "Action": {
+                    "type": "resetClick"
+                  }
+                },
+                {
+                  "Action": {
+                    "type": "waitOrClick",
+                    "waitTime": 30
+                  }
+                },
+                {
+                  "Action": {
+                    "type" : "sayOnAndroidAndPlayAnimationAction",
+                    "text": "Dlaczego sądzisz, że kandydat z dyplomem takim jak twój jest odpowiedni na to stanowisko?",
+                    "gestures":[
+                         ["animations/Stand/Gestures/You_1",0],
+                         ["animations/Stand/Gestures/Explain_5",1]
+                         ]
+                  }
+                },
+                {
+                  "Action": {
+                    "type": "resetClick"
+                  }
+                },
+                {
+                  "Action": {
+                    "type": "waitOrClick",
+                    "waitTime": 30
+                  }
+                },
+                {
+                  "Action": {
+                    "type" : "sayOnAndroidAndPlayAnimationAction",
+                    "text" : "Gdzie siebie widzisz za 5 lat? Jakie są twoje oczekiwania i cele?",
+                    "gestures":[
+                         ["animations/Stand/Gestures/Thinking_1",0],
+                         ["animations/Stand/Gestures/Explain_8",1]
+                         ]
+                  }
+                },
+                {
+                  "Action": {
+                    "type": "resetClick"
+                  }
+                },
+                {
+                  "Action": {
+                    "type": "waitOrClick",
+                    "waitTime": 30
+                  }
+                },
+                {
+                  "Action" : {
+                  "type" : "sayOnAndroidAndPlayAnimationAction",
+                  "text" : "Rozmowa dobiegła końca, dziękujemy za udział, poinformujemy Cię o postępach.",
+                  "gestures":[["animations/Stand/Gestures/Hey_1", 2]]
+                  }
+                },
+                {
+                  "Action": {
+                    "type": "resetClick"
+                  }
+                },
+                {
+                  "Action": {
+                    "type": "waitOrClick",
+                    "waitTime": 30
+                  }
+                }
+            ],
+            "children" : [
+            {
+              "type" : "sync",
+              "start_rule" : "always()",
+              "end_rule" : "always()",
+              "events" : [],
+              "actions" : [
+                {
+                  "Action": {
+                    "type": "stopFaceTrackingAction"
+                  }
+                },
+                {
+                  "Action": {
+                  "type": "cleanAllAction"
+                }
+                }
+              ],
+              "children" : []
+            }
+            ]
+          }
+        ]
+
+
+      }
+
+
+
+
+    ]
+
+  }
+}
+
+
+

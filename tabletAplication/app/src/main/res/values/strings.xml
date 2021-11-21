@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Tablet Application</string>
+    <string name="hint">Tap on mic to start</string>
+</resources>

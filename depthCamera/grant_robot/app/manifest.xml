@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="0.0.2" uuid="grant_robot">
+ <names>
+  <name lang="en_US">grant_robot</name>
+ </names>
+ <supportedLanguages>
+  <language>en_US</language>
+ </supportedLanguages>
+ <descriptionLanguages>
+  <language>en_US</language>
+ </descriptionLanguages>
+ <contents/>
+ <requirements>
+  <naoqiRequirement minVersion="2.3"/>
+  <robotRequirement model="PEPPER"/>
+ </requirements>
+ <services>
+  <service execStart="/usr/bin/python scripts/depthcamera.py" name="depthcamera" autorun="true"/>
+ </services>
+
+</package>

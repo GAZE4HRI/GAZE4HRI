@@ -1,0 +1,42 @@
+{
+  "greeting" : {
+    "action" : {
+      "type" : "sayOnAndroidAndPlayAnimationAction",
+      "text": "Cześć mam na imię Pepper, opowiedz mi proszę co ja tutaj robię.",
+      "gestures":[["animations/Stand/Gestures/Hey_1", 0],
+        ["animations/Stand/Gestures/Me_1",1],
+        ["animations/Stand/Gestures/You_1",2],
+        ["animations/Stand/Gestures/Explain_1",1]
+      ]
+    },
+    "waitTime" : 8
+  },
+
+  "stages" : [
+     [
+        {
+          "startAction": {
+            "type" : "sayOnAndroidAndPlayAnimationAction",
+            "text": "denerwowałbym się ale zabrakło mi intencjonalności.",
+            "gestures":[
+                 ["animations/Stand/Gestures/You_1",0],
+                 ["animations/Stand/Gestures/Explain_2",1]
+                 ]
+          },
+          "waitTime": 20
+        }
+     ]
+  ],
+
+
+
+  "goodbye" : {
+    "action" : {
+      "type" : "sayOnAndroidAndPlayAnimationAction",
+      "text" : "Spoko, do zobaczenia.",
+      "gestures":[["animations/Stand/Gestures/Hey_1", 2]]
+    },
+    "waitTime" : 3
+  }
+
+}

@@ -1,0 +1,32 @@
+{
+  "platform":{
+    "options" : {
+      "gesturesEnabled" : true,
+      "STTEnabled" : false,
+      "gazeCase" : "contact_mode",
+      "STTAndroid" : false,
+      "STT" : "google",
+      "experimentName" : "idMJ",
+      "ip" : "192.168.0.103",
+      "port" : "9559",
+      "humanTracking" : "half",
+      "debugMode" : true,
+      "recordingTopic": "pepper/video",
+      "startRecording" : "start_recording",
+      "stopRecording" : "stop_recording",
+      "speachTopic": "pepper/speechToText",
+      "startRecognition" : "start recognition",
+      "stopRecognition" : "stop recognition",
+      "unityTopic" : "unity/",
+      "configTopic" : "config/",
+      "subscriptionTopics": [
+        ["update/", 0], ["click/", 2]
+      ],
+      "robot_name" : "avatar",
+      "services_address" : "http://127.0.0.1:8765",
+      "event_separation": 15
+    },
+    "robot_name" : "avatar",
+    "modules" : ["android_connection"]
+  }
+}

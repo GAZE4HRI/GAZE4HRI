@@ -1,0 +1,93 @@
+{
+  "greeting" : {
+    "action" : {
+      "type" : "say",
+      "text" : "Hello. ^start(animations/Stand/Gestures/Hey_1) this is Zenek. I will be interviewing you on a job you applied for. Before we start let's make a demo, throughout the interview you will be given 10 seconds to answer each question, after the time limit I will continue with the next question. ^wait(animations/Stand/Gestures/Hey_1)"
+    },
+    "waitTime" : 3
+  },
+
+  "stages" : [
+    {
+      "startAction": {
+        "type": "say",
+        "text": "Can you introduce yourself?"
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type": "say",
+        "text": "How did you find out about this job offer?"
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type": "say",
+        "text": "Let's talk about you. What are your hobbies, your expectations and goals?"
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type": "say",
+        "text": "Why are you interested in this job offer?"
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type": "say",
+        "text": "In which ways you find yourself suitable for this position?"
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type": "say",
+        "text": "Where do you see yourself in 5 years?"
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type": "say",
+        "text": "Let's talk about your personal traits. Can you give 3 traits that suits you most?"
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type": "say",
+        "text": "What do you think about your leadership skills? What kind of a leader would you be?"
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type": "say",
+        "text": "Can you give an example that demonstrates your leadership skills?"
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type": "say",
+        "text": "If you get an another job offer, how would you feel?"
+      },
+      "waitTime": 10
+    }
+  ],
+
+
+
+  "goodbye" : {
+    "action" : {
+      "type" : "say",
+      "text" : "The ^start(animations/Stand/Gestures/Hey_1)interview is over, thank you for your participation we will inform you about your progress.^wait(animations/Stand/Gestures/Hey_1)"
+    },
+    "waitTime" : 3
+  }
+
+}

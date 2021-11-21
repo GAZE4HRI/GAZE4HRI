@@ -1,0 +1,7 @@
+Flask
+python-logstash
+gunicorn==19.10.0
+py_eureka_client==0.7.4
+python-json-logger
+futures
+scipy

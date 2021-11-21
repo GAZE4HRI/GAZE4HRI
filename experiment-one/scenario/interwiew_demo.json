@@ -1,0 +1,97 @@
+{
+  "greeting" : {
+    "action" : {
+      "type" : "sayOnAndroidAndPlayAnimationAction",
+      "text": "Dzień dobry. Mam na imię Pepper. Przeprowadzę z tobą rozmowę w sprawie pracy o którą się ubiegałeś. Zanim zaczniemy, wyjaśnie ci zasady rozmowy. W trakcie wywiadu będziesz otrzymywał kolejne pytania. Po zadaniu pytania będziesz miał 30 sekund na odpowiedź.",
+      "gestures":[["animations/Stand/Gestures/Hey_1", 0],
+        ["animations/Stand/Gestures/Me_1",1],
+        ["animations/Stand/Gestures/You_1",2],
+        ["animations/Stand/Gestures/Explain_1",1]
+      ]
+    },
+    "waitTime" : 9
+  },
+  "stages" : [
+    [
+    {
+      "startAction": {
+        "type" : "sayOnAndroidAndPlayAnimationAction",
+        "text": "Po pierwsze, czy możesz się przedstawić?",
+        "gestures":[
+             ["animations/Stand/Gestures/You_1",0],
+             ["animations/Stand/Gestures/Explain_2",1]
+             ]
+      },
+      "waitTime": 30
+    },
+    {
+      "startAction": {
+        "type" : "sayOnAndroidAndPlayAnimationAction",
+        "text": "Skąd dowiedziałeś się o tej ofercie pracy?",
+        "gestures":[
+             ["animations/Stand/Gestures/You_1",0],
+             ["animations/Stand/Gestures/Explain_1",1]
+             ]
+      },
+      "waitTime": 30
+    }
+    ],
+    [
+    {
+      "startAction": {
+        "type" : "sayOnAndroidAndPlayAnimationAction",
+        "text": "Porozmawiajmy o tobie. Jakie są twoje hobby, twoje oczekiwania i cele?",
+        "gestures":[
+             ["animations/Stand/Gestures/You_1",0],
+             ["animations/Stand/Gestures/Explain_2",1]
+             ]
+      },
+      "waitTime": 30
+    },
+    {
+      "startAction": {
+        "type" : "sayOnAndroidAndPlayAnimationAction",
+        "text": "Proszę opowiedz mi o stanowiskach które zajmowałeś. Dlaczego jesteś zainteresowany tą ofertą pracy?",
+        "gestures":[
+             ["animations/Stand/Gestures/You_1",0],
+             ["animations/Stand/Gestures/Explain_3",1]
+             ]
+      },
+      "waitTime": 30
+    },
+    {
+      "startAction": {
+        "type" : "sayOnAndroidAndPlayAnimationAction",
+        "text": "Dlaczego sądzisz, że kandydat z dyplomem takim jak twój jest odpowiedni na to stanowisko?",
+        "gestures":[
+             ["animations/Stand/Gestures/You_1",0],
+             ["animations/Stand/Gestures/Explain_5",1]
+             ]
+      },
+      "waitTime": 30
+    },
+    {
+      "startAction": {
+        "type" : "sayOnAndroidAndPlayAnimationAction",
+        "text" : "Gdzie siebie widzisz za 5 lat? Jakie są twoje oczekiwania i cele?",
+        "gestures":[
+             ["animations/Stand/Gestures/Thinking_1",0],
+             ["animations/Stand/Gestures/Explain_8",1]
+             ]
+      },
+      "waitTime": 30
+    }
+    ]
+  ]
+  ,
+
+  "goodbye" : {
+    "action" : {
+      "type" : "sayOnAndroidAndPlayAnimationAction",
+      "text" : "Rozmowa dobiegła końca, dziękujemy za udział, poinformujemy Cię o postępach.",
+      "gestures":[["animations/Stand/Gestures/Hey_1", 2]]
+    },
+    "waitTime" : 3
+  }
+
+}

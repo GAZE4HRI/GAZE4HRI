@@ -1,0 +1,92 @@
+{
+  "greeting" : {
+    "action" : {
+      "type" : "say",
+      "text" : "Czeshch,^start(animations/Stand/Gestures/Hey_1) mam na eameaEoon Zeneck. BEoondEoon rozmaveaaw z tobon v spraveae pratsi, o cktooron shEoon oobeaegawesh. Zanjm zachznjemi, zroobmi demo, pżzez tsawi viveaad dostanjes 10 seckoond na odpoveaed na ckaside pitanje po oopwiveae chasoo bEoondEoon ckontinooovaw z nastEoonpnim pitanjem. ^wait(animations/Stand/Gestures/Hey_1)"},
+    "waitTime" : 3
+  },
+
+  "stages" : [
+    {
+      "startAction": {
+        "type": "say",
+        "text": "opoveaeds tsosh o sobeae?"
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type": "say",
+        "text": "yack d'ov'ee'ej'aw'esh shEoon o tey oferche pratsi ?"
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type": "say",
+        "text": "porozmaveaaymi o tobeae. yackeae son tvoye hobbi, tvoye ocheckeavanjeaa ea tsele?"
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type": "say",
+        "text": "dlachego yestesh zaeanteresovani ton oferton pratsi?"
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type": "say",
+        "text": "dlachego oovasiash sie to stanoveascko yest dla chebeae vwashchve ?"
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type": "say",
+        "text": "gje veajsh sheaebeae za  lat ?"
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type": "say",
+        "text": "porozmaveaaymi o tvoeah osobeastih tsetsats. chi mosiesh podach  tsetsi harackteroo, cktoore naylepeaey chEoon opeasooyon ?"
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type": "say",
+        "text": "tso sonjs o svoeah oomeaeyEoontnoshchah pżivoodchih? yackeam leaderem bish biw? "
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type": "say",
+        "text": "chi mosiesh podach pgick wad demonstroo yont'si  tvoye oomeaeyEntnoshch pgiv vood dch'e ?"
+      },
+      "waitTime": 10
+    },
+    {
+      "startAction": {
+        "type": "say",
+        "text": "yeshlea dostanjes eannon ofertEoon pratsi, yack bish shEoon choow ?"
+      },
+      "waitTime": 10
+    }
+  ],
+
+
+
+  "goodbye" : {
+    "action" : {
+      "type" : "say",
+      "text" : "rozmova ^start(animations/Stand/Gestures/Hey_1) dobeaegwa ckonjtsa, jEoonckooyemi za oojaw, poeanformooyemi chEoon o postEoonpah. ^wait(animations/Stand/Gestures/Hey_1)"
+    },
+    "waitTime" : 3
+  }
+
+}

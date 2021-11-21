@@ -1,0 +1,21 @@
+server:
+  port: 8765
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+zuul:
+  ignoredServices: "*"
+  routes:
+    emotions:
+      path: /emotions/**
+      serviceId: emotion-service
+      stripPrefix: false
+    gaze:
+      path: /gaze/**
+      serviceId: gaze-service
+      stripPrefix: True

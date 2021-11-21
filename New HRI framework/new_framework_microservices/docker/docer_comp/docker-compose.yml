@@ -1,0 +1,49 @@
+version: '2.1'
+services:
+  edge:
+    image: iosr/edge:1.0
+    restart: always
+    network_mode: "host"
+    ports:
+      - "8765:8765"
+    depends_on:
+      discovery:
+          condition: service_started
+
+  discovery:
+    image: iosr/registry:1.0
+    restart: always
+    network_mode: "host"
+    ports:
+      - "8761:8761"
+
+  gaze:
+    image: gaze_service_image
+    restart: always
+    network_mode: "host"
+    ports:
+      - "6000:6000"
+    depends_on:
+      discovery:
+          condition: service_started
+
+  emotion:
+    image: emotion_service_image
+    restart: always
+    network_mode: "host"
+    ports:
+      - "5000:5000"
+    depends_on:
+      discovery:
+          condition: service_started
+
+  question:
+    image: question_service_image
+    restart: always
+    network_mode: "host"
+    ports:
+      - "7000:7000"
+    depends_on:
+      discovery:
+          condition: service_started
+
